@@ -1,11 +1,9 @@
-package nivel1;
+package niveles;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
-
-import inicio.Niveles;
-
+import java.util.Arrays;
 
 public class Pelota {
     private int x;
@@ -64,19 +62,30 @@ public class Pelota {
         if (e.getKeyCode() == KeyEvent.VK_DOWN && dy < 3 ) { 
          dy +=1;
         }
-        if (e.getKeyCode() == KeyEvent.VK_P) { //Tecla P
+        if (e.getKeyCode() == KeyEvent.VK_P) {
          dx = 0;
          dy = 0;
         }
-        if (e.getKeyCode() == KeyEvent.VK_R) { //Tecla R
+        if (e.getKeyCode() == KeyEvent.VK_R) { 
             int random = (int) Math.floor(Math.random()*2);
             if (random == 0 ) {
                 dx = 0;
             } else
                 dy= 0;
         }
-        if (e.getKeyCode() == KeyEvent.VK_Q) { //Tecla Q
+        if (e.getKeyCode() == KeyEvent.VK_Q) { 
           System.exit(0);
        }
        } 
+
+    public int[] posicion() {
+        int[] estado = new int[2];
+        estado[0] = this.x;
+        estado[1] = this.y;
+        return estado;
+    }
+
+    public void invertir(){
+        dy = -dy;
+    }
 }

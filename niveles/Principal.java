@@ -1,11 +1,12 @@
-package nivel2;
+package niveles;
 
 import javax.swing.JFrame;
 import java.util.logging.*;
 
 public class Principal extends JFrame {
+    
+    public static int nivel = 1;
     public Juego game;
-    private Hilo hilo;
 
     public Principal() {
 
@@ -14,11 +15,11 @@ public class Principal extends JFrame {
         setVisible(true);
         setResizable(false);
         setLocationRelativeTo(null);
-
+        
         game = new Juego();
         add(game);
-        hilo = new Hilo(game);
-        hilo.start();
+        Ejecutar j1 = new Ejecutar(game);
+        j1.start();
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

@@ -3,7 +3,6 @@ package inicio;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import nivel1.Principal;
 
 public class Niveles extends JFrame{
     public JPanel p2 = new JPanel();
@@ -45,7 +44,7 @@ public class Niveles extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae){ 
                 dispose();
-                nivel1.Principal p1 = new nivel1.Principal();
+                niveles.Principal p1 = new niveles.Principal();
             }
         };
         nivel1.addActionListener(level1);
@@ -54,10 +53,21 @@ public class Niveles extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae){ 
                 dispose();
-                nivel2.Principal p1 = new nivel2.Principal();
+                niveles.Principal.nivel = 2;
+                niveles.Principal p1 = new niveles.Principal();
             }
         };
         nivel2.addActionListener(level2);
+
+        ActionListener level3 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){ 
+                dispose();
+                niveles.Principal.nivel = 3;
+                niveles.Principal p1 = new niveles.Principal();
+            }
+        };
+        nivel3.addActionListener(level3);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
