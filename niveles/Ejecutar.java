@@ -12,9 +12,8 @@ public class Ejecutar extends Thread {
         while (true) {
             juego.repaint();
             try {
-                Thread.sleep(1000);
+                Thread.sleep(15);
             } catch (Exception e) {
-                //TODO: handle exception
             }
         }
     }

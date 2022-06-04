@@ -13,32 +13,31 @@ public class Niveles extends JFrame{
         setSize(500,400);
         setLocationRelativeTo(null);
         setTitle("REBOTE");
+        ImageIcon img = new ImageIcon("img/rebote.png");
+        setIconImage(img.getImage());
         getContentPane().add(p2); 
         
         JLabel title = new JLabel("REBOTE INFINITO: ", SwingConstants.CENTER);
-        title.setBounds(90, 10, 300, 30);
-        title.setFont(new Font("arial", Font.BOLD, 20));
+        title.setBounds(45, 10, 400, 30);
+        title.setFont(new Font("source sans pro black", Font.BOLD, 30));
+        
         p2.add(title);
          
         //Niveles
 
         JButton nivel1 = new JButton("Nivel 1");
-        nivel1.setBounds(155,70,180,70);
+        nivel1.setBounds(155, 100,180,70);
         nivel1.setBackground(Color.decode("#dbeddc"));
-        nivel1.setFont(new Font("arial", Font.BOLD, 17));
+        nivel1.setFont(new Font("source sans pro black", Font.BOLD, 17));
+        nivel1.setBackground(Color.LIGHT_GRAY);
         p2.add(nivel1);
 
         JButton nivel2 = new JButton("Nivel 2");
-        nivel2.setBounds(155,150,180,70);
+        nivel2.setBounds(155,190,180,70);
         nivel2.setBackground(Color.decode("#dbeddc"));
-        nivel2.setFont(new Font("arial", Font.BOLD, 17));
+        nivel2.setFont(new Font("source sans pro black", Font.BOLD, 17));
+        nivel2.setBackground(Color.LIGHT_GRAY);
         p2.add(nivel2);
-
-        JButton nivel3 = new JButton("Nivel 3");
-        nivel3.setBounds(155,230,180,70);
-        nivel3.setBackground(Color.decode("#dbeddc"));
-        nivel3.setFont(new Font("arial", Font.BOLD, 17));
-        p2.add(nivel3);
 
         ActionListener level1 = new ActionListener(){
             @Override
@@ -58,16 +57,6 @@ public class Niveles extends JFrame{
             }
         };
         nivel2.addActionListener(level2);
-
-        ActionListener level3 = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae){ 
-                dispose();
-                niveles.Principal.nivel = 3;
-                niveles.Principal p1 = new niveles.Principal();
-            }
-        };
-        nivel3.addActionListener(level3);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }

@@ -1,7 +1,7 @@
 package niveles;
 
 import javax.swing.JFrame;
-import java.util.logging.*;
+import javax.swing.*;
 
 public class Principal extends JFrame {
     
@@ -15,6 +15,8 @@ public class Principal extends JFrame {
         setVisible(true);
         setResizable(false);
         setLocationRelativeTo(null);
+        ImageIcon img = new ImageIcon("img/rebote.png");
+        setIconImage(img.getImage());
         
         game = new Juego();
         add(game);
@@ -22,6 +24,5 @@ public class Principal extends JFrame {
         j1.start();
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 }

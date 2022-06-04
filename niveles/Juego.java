@@ -4,15 +4,13 @@ package niveles;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.*;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.Arrays;
 
 
 public class Juego extends JPanel {
 
-    public boolean p2Active = false;
+   public boolean p2Active = false;
    Pelota p1 = new Pelota(360, 250);
    Pelota p2;
    
@@ -46,7 +44,6 @@ public class Juego extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 =(Graphics2D) g;
-        Ellipse2D circulo=new Ellipse2D.Float(100, 100, 50, 50 );
         g2.setColor(Color.RED);
         dibujar(g2);
         actualizar();
@@ -64,17 +61,6 @@ public class Juego extends JPanel {
 
         if (Principal.nivel != 1 && p2Active == true) {
             p2.mover(getBounds());
-
-            int[] col1 = p1.posicion();
-            int[] col2 = p2.posicion();
-
-            if (Principal.nivel == 3 && (col1[0] == col2[0])) {
-                
-               // System.out.println("1. "+col1[0] + "2. "+col2[0]);
-                System.out.println("1. "+col1[1] + "2. "+col2[1]);
-                //p1.invertir();
-                // p2.invertir();
-            }
         }
         
     }

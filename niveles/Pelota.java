@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class Pelota {
     private int x;
     private int y;
-    private int inicio = 0;
     private int dx = 0, dy = 0;
     private final int ANCHO = 50, ALTO = 50;
 
@@ -50,10 +49,10 @@ public class Pelota {
         }
     }
     public void keyPressed(KeyEvent e){
-        if (e.getKeyCode() == KeyEvent.VK_LEFT && dx > -2) { 
+        if (e.getKeyCode() == KeyEvent.VK_LEFT && dx > -3) { 
         dx -= 1;
         }
-        if (e.getKeyCode() == KeyEvent.VK_UP && dy > -2) { 
+        if (e.getKeyCode() == KeyEvent.VK_UP && dy > -3) { 
         dy -= 1;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT && dx < 3) { 
@@ -76,16 +75,6 @@ public class Pelota {
         if (e.getKeyCode() == KeyEvent.VK_Q) { 
           System.exit(0);
        }
-       } 
+    } 
 
-    public int[] posicion() {
-        int[] estado = new int[2];
-        estado[0] = this.x;
-        estado[1] = this.y;
-        return estado;
-    }
-
-    public void invertir(){
-        dy = -dy;
-    }
 }
